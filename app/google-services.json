@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "498074208877",
+    "firebase_url": "https://synctheory-4dc0d-default-rtdb.firebaseio.com",
+    "project_id": "synctheory-4dc0d",
+    "storage_bucket": "synctheory-4dc0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498074208877:android:c33e83ef0b3ebdf0574d64",
+        "android_client_info": {
+          "package_name": "com.example.synctheory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498074208877-tf1assk336nsirpabb8h2a2qs5mhrck6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-N7ILtrAPRA7L0LCliIcBUI18UW7JbMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498074208877-tf1assk336nsirpabb8h2a2qs5mhrck6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
