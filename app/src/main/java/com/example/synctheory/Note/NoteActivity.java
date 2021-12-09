@@ -43,7 +43,7 @@ public class NoteActivity extends AppCompatActivity {
         String lectureName = callingIntent.getStringExtra("LectureName");
         getSupportActionBar().setTitle(course + ": " + lectureName); // set the top title
 
-        //Set View course and lecture name
+        //Set View course and lecture name, given from the intents of the previous lecture activity.
         mView.setCourseName(course);
         mView.setLectureName(lectureName);
     }

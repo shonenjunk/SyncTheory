@@ -27,7 +27,10 @@ import com.google.firebase.database.ValueEventListener;
 public class NoteViewFragment extends Fragment implements NoteContract.View{
 
     private NoteContract.Presenter mPresenter;
+    //edit text that represents the lecture note
     EditText etNote;
+
+    // course and lecture name thats defined from the lecture activities intent extra values
     String course;
     String lectureName;
 
@@ -46,10 +49,10 @@ public class NoteViewFragment extends Fragment implements NoteContract.View{
          mPresenter = presenter;
     }
 
+    //allows the lecture activity to pass in the correct course and lecture name to retrive the proper note
     public void setCourseName(String cName){
         course = cName;
     }
-
     public void setLectureName(String lName){
         lectureName = lName;
     }
@@ -76,7 +79,6 @@ public class NoteViewFragment extends Fragment implements NoteContract.View{
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
-        //THIS NEEDS TO BE LOOKED AT
         //retrieves the reference to the specific note from the passed in course and lectureName from the intent extras.
         DatabaseReference myRef = database.getReference(course).child(lectureName).child("note");
 
@@ -121,6 +123,7 @@ public class NoteViewFragment extends Fragment implements NoteContract.View{
     @Override
     public void onResume(){ super.onResume(); }
 
+    //function to end the note activity when the user hits the back button on the phone
     @Override
     public void finishNoteActivity() { getActivity().finish(); }
 
