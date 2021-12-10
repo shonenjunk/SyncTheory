@@ -45,7 +45,7 @@ public class lectureAdapter extends FirebaseRecyclerAdapter<lecture, lectureAdap
         holder.lectureName.setTag(model.getLectureName());
         holder.lectureName.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { // Button to start note taking on a lesson
                 Intent noteIntent = new Intent();
                 String lectureName = view.getTag().toString();
                 noteIntent.setClass(view.getContext(), NoteActivity.class);

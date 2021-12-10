@@ -30,6 +30,8 @@ public class LectureListActivity extends AppCompatActivity {
     LectureListContract.View mView;
     LectureListContract.Presenter mPresenter;
 
+    // Function to on creation of fragment initialize, set the user to an elivated user status, 
+    // and set the title
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

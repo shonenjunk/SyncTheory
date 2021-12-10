@@ -1,5 +1,6 @@
 package com.example.synctheory.LectureList;
 
+// Creates constant definitions
 public interface LectureListContract {
         interface View{
             void setPresenter(Presenter presenter);
