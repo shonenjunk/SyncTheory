@@ -32,6 +32,9 @@ public class LoginPresenter implements LoginContract.Presenter{
 
     }
 
+    /**
+     * goClicked -- method called when the user attempts to login, checks that the users information matches with a username and password in Firebase, otherwise sets appropriate error message.
+     */
     @Override
     public void goClicked() {
 
@@ -77,6 +80,9 @@ public class LoginPresenter implements LoginContract.Presenter{
 
     }
 
+    /**
+     * newUserClicked -- method that notifies that the new user button was clicked
+     */
     @Override
     public void newUserClicked() {
         mView.createNewUser();

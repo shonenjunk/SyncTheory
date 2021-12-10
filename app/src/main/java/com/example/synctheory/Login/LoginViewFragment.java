@@ -57,6 +57,7 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
         // Inflate the layout for this fragment
         View root =  inflater.inflate(R.layout.fragment_login_view, container, false);
 
+        //go button, launches the goClicked method that checks if user entered valid login information
         btnGo = root.findViewById(R.id.btnGo);
         btnGo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +66,7 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
             }
         });
 
+        //new user button, launches sign-up viewer
         btnNewUser = root.findViewById(R.id.btnNewUser);
         btnNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,18 +75,18 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
             }
         });
 
+        //UI elements
         etEmail = root.findViewById(R.id.etEmail);
-
         etPassword = root.findViewById(R.id.etPassword);
-
-
         tvMessage = root.findViewById(R.id.tvMessage);
-
         ivLogo = root.findViewById(R.id.ivLogo);
 
         return root;
     }
 
+    /**
+     * createNewUser -- method that creates a new user in firebase based on the information entered.
+     */
     @Override
     public void createNewUser() {
         Intent newUserIntent = new Intent(this.getContext(), SignUpActivity.class);
@@ -98,6 +100,10 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
         startActivity(newUserIntent, options.toBundle());
     }
 
+    /**
+     * startCourseListActivity -- method that starts course list activity when user enters valid login information
+     * @param isElevatedUser -- boolean indicating if user is a teacher or not
+     */
     @Override
     public void startCourseListActivity(Boolean isElevatedUser) {
         Intent courseListIntent = new Intent(this.getContext(), CourseListActivity.class);
@@ -110,7 +116,6 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
     public String getEtEmail() {
         String email = this.etEmail.getText().toString();
 
-        //if(this.etEmail.getText() == null){
         if(email.isEmpty()){
             return "";
         }
@@ -121,7 +126,6 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
     @Override
     public String getEtPassword() {
         String password = this.etPassword.getText().toString();
-        //if(this.etPassword.getText() == null){
         if(password.isEmpty()){
             return "";
         }
@@ -139,6 +143,9 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
     @Override
     public void setEtPassword(String password) { this.etPassword.setText(password); }
 
+    /**
+     * setPasswordError -- method called when user enters invalid password, sets error message in password editText
+     */
     @Override
     public void setPasswordError() {
         Drawable error = getResources().getDrawable(R.drawable.mtrl_ic_error);
@@ -147,6 +154,9 @@ public class LoginViewFragment extends Fragment implements LoginContract.View {
         etPassword.requestFocus();
     }
 
+    /**
+     * setEmailError -- method called when user enters invalid email, sets error message in username editText
+     */
     @Override
     public void setEmailError() {
         etEmail.setError("No such user exists.");
