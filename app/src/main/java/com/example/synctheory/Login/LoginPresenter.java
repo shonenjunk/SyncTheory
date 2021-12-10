@@ -73,18 +73,7 @@ public class LoginPresenter implements LoginContract.Presenter{
                 }
             });
         }
-        /*//Check to see if Email and Password Exist and match
-        if(checkUser) {
-            mView.startCourseListActivity(); // if email and password exist in database, login successful, start course list activity
-            Log.d("LOGIN PRESENTER", "Login Successful");
-        }
-        else {
-            //mView.displayErrorMessage();
-            Log.d("LOGIN PRESENTER", "Wrong Login Credentials");
-        }*/
 
-
-        //mView.startCourseListActivity();
 
     }
 
