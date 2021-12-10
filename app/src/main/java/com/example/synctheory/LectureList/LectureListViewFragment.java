@@ -41,6 +41,7 @@ public class LectureListViewFragment extends Fragment implements LectureListCont
         // Required empty public constructor
     }
 
+    // Initializes
     public static LectureListViewFragment newInstance(String param1, String param2) {
         LectureListViewFragment fragment = new LectureListViewFragment();
         return fragment;
@@ -122,12 +123,12 @@ public class LectureListViewFragment extends Fragment implements LectureListCont
     @Override
     public void setCourseName(String cName) { course = cName; }
 
-    @Override
+    @Override // Determines privleges like ability to create lessons
     public void setIsElevatedUser(Boolean isElevatedUser) {
         this.isElevatedUser = isElevatedUser;
     }
 
-    @Override
+    @Override //End note taking and go back to lecture screen
     public void finishNoteActivity() {
         adapter.stopListening();
         getActivity().finish();
